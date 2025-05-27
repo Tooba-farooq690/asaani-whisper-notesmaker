@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Asaani Transcription</title>
+  <style>
+    body {
+      background-color: #e6f2ff; 
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      color: #003366; 
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    input[type="file"] {
+      display: block;
+      margin: 20px auto;
+      font-size: 18px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 2px solid #0059b3;
+      background-color: #cce6ff;
+      cursor: pointer;
+    }
+
+    button {
+      display: block;
+      margin: 10px auto 30px;
+      background-color: #0059b3;
+      color: white;
+      font-size: 20px;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #004080;
+      transform: scale(1.1);
+    }
+
+    #message, #uploadingText {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+    #message {
+      color: green;
+      display: none;
+    }
+
+    #uploadingText {
+      color: #0059b3;
+    }
+
+    #transcriptBox {
+      width: 80%;
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      min-height: 150px;
+      font-size: 18px;
+      white-space: pre-wrap;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .dot-anim::after {
+      content: '';
+      animation: dots 1.5s infinite steps(3);
+    }
+
+    @keyframes dots {
+      0%   { content: ''; }
+      33%  { content: '.'; }
+      66%  { content: '..'; }
+      100% { content: '...'; }
+    }
+  </style>
+</head>
+<body>
+  <h1>WELCOME TO ASAANI</h1>
+  <h2>Pls upload your audio file for transcription</h2>
+
+  <input type="file" id="audioFile" accept="audio/*" />
+  <div id="uploadingText" style="display: none;">Uploading<span class="dot-anim"></span></div>
+  <div id="message">Upload complete!</div>
+
+  <button id="transcribeBtn" disabled>Transcribe</button>
+
+  <h2>Transcript:</h2>
+  <pre id="transcriptBox">Waiting for upload...</pre>
+
+  <button id="downloadBtn" style="display: none;">Download as PDF</button>
+
+  <p style="margin-top: 50px; font-size: 14px; color: #666;">
+    © Tooba Farooq 2025. All rights reserved.
+  </p>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
